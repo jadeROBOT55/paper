@@ -63,7 +63,7 @@
                     </statement>
                     <statement name="ELSE">
                       <block type="oled_drawtext" id="258">
-                        <field name="TEXT">selena</field>
+                        <field name="TEXT">sydney</field>
                       </block>
                     </statement>
                     <next>
