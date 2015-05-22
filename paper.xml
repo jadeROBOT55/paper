@@ -62,8 +62,8 @@
                       </block>
                     </statement>
                     <statement name="ELSE">
-                      <block type="comment_comment" id="228">
-                        <field name="TEXT">heyy</field>
+                      <block type="oled_drawtext" id="258">
+                        <field name="TEXT">selena</field>
                       </block>
                     </statement>
                     <next>
