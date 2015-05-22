@@ -59,7 +59,7 @@
                             <field name="ACTION">ON</field>
                             <value name="LED">
                               <block type="math_number" id="197">
-                                <field name="NUM">200</field>
+                                <field name="NUM">100</field>
                               </block>
                             </value>
                           </block>
