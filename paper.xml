@@ -1,5 +1,5 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="controls_whileUntil" id="49" inline="false" x="4" y="90">
+  <block type="controls_whileUntil" id="49" inline="false" x="163" y="1">
     <field name="MODE">UNTIL</field>
     <value name="NUMBER">
       <block type="sensor_button" id="120">
@@ -28,54 +28,7 @@
                   </block>
                 </value>
                 <next>
-                  <block type="controls_if" id="113" inline="false">
-                    <mutation else="1"></mutation>
-                    <value name="IF0">
-                      <block type="logic_compare" id="183" inline="true">
-                        <field name="OP">GT</field>
-                        <value name="A">
-                          <block type="sensor_spectrometer" id="91">
-                            <field name="LIGHT">RED</field>
-                          </block>
-                        </value>
-                        <value name="B">
-                          <block type="math_number" id="190">
-                            <field name="NUM">55</field>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
-                    <statement name="DO0">
-                      <block type="movement_forward" id="61">
-                        <next>
-                          <block type="robot_delay" id="51" inline="true">
-                            <value name="DELAY">
-                              <block type="math_number" id="78">
-                                <field name="NUM">100</field>
-                              </block>
-                            </value>
-                            <next>
-                              <block type="movement_stop" id="222"></block>
-                            </next>
-                          </block>
-                        </next>
-                      </block>
-                    </statement>
-                    <statement name="ELSE">
-                      <block type="oled_drawtext" id="258">
-                        <field name="TEXT">hiiiiiiiiii</field>
-                      </block>
-                    </statement>
-                    <next>
-                      <block type="robot_delay" id="220" inline="true">
-                        <value name="DELAY">
-                          <block type="math_number" id="221">
-                            <field name="NUM">100</field>
-                          </block>
-                        </value>
-                      </block>
-                    </next>
-                  </block>
+                  <block type="movement_stop" id="71"></block>
                 </next>
               </block>
             </next>
@@ -84,7 +37,76 @@
       </block>
     </statement>
     <next>
-      <block type="movement_stop" id="71"></block>
+      <block type="controls_if" id="113" inline="false">
+        <value name="IF0">
+          <block type="logic_compare" id="183" inline="true">
+            <field name="OP">GT</field>
+            <value name="A">
+              <block type="sensor_spectrometer" id="91">
+                <field name="LIGHT">RED</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="190">
+                <field name="NUM">55</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="controls_if" id="426" inline="false">
+            <value name="IF0">
+              <block type="logic_compare" id="467" inline="true">
+                <field name="OP">LT</field>
+                <value name="A">
+                  <block type="sensor_object" id="460">
+                    <field name="OBJECT">LEFTFRONT</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="474">
+                    <field name="NUM">80</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="movement_right" id="484"></block>
+            </statement>
+            <next>
+              <block type="movement_forward" id="61">
+                <next>
+                  <block type="robot_delay" id="51" inline="true">
+                    <value name="DELAY">
+                      <block type="math_number" id="78">
+                        <field name="NUM">100</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="movement_stop" id="222">
+                        <next>
+                          <block type="oled_drawtext" id="258">
+                            <field name="TEXT">hiiiiiiiiii</field>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="robot_delay" id="220" inline="true">
+            <value name="DELAY">
+              <block type="math_number" id="221">
+                <field name="NUM">100</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
     </next>
   </block>
 </xml>
