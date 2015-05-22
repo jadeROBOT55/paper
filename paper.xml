@@ -36,7 +36,7 @@
               <block type="robot_delay" id="51" inline="true">
                 <value name="DELAY">
                   <block type="math_number" id="78">
-                    <field name="NUM">10</field>
+                    <field name="NUM">100</field>
                   </block>
                 </value>
                 <next>
@@ -51,7 +51,7 @@
                       <block type="oled_setcursor" id="175" inline="true">
                         <value name="STARTX">
                           <block type="math_number" id="204">
-                            <field name="NUM">0</field>
+                            <field name="NUM">1</field>
                           </block>
                         </value>
                         <value name="STARTY">
